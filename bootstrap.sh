@@ -39,10 +39,10 @@ git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/vim-pandoc/vim-pandoc.git
 git clone https://github.com/vim-pandoc/vim-pandoc-syntax.git
 git clone https://github.com/derekwyatt/vim-scala.git
-get clone https://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive 
 sudo pacman -S mono nodejs npm --noconfirm
 gpg --keyserver keyserver.ubuntu.com --recv-keys 0FC3042E345AD05D
-python2 ./install.py --clang-completer --omnisharp-completer --gocode-completer \
+python2 install.py --clang-completer --omnisharp-completer --gocode-completer \
         --tern-completer --racer-completer
