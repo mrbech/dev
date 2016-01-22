@@ -51,7 +51,7 @@ man() {
 }
 
 export PS1='%B%F{2}%n@%m%f%b:%B%F{4}%~%f%b
-%# '
+λ '
 
 bindkey '\e[1~'  beginning-of-line
 bindkey '\e[4~'  end-of-line

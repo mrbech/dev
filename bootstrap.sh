@@ -7,9 +7,12 @@ cp -r /vagrant/configs/. ~/
 ln -s /vagrant/projects ~/projects
 
 #Software for development:
-sudo pacman -S cmake vim tmux zsh rust git cargo go docker \
+sudo pacman -S cmake vim tmux zsh rust git cargo go docker zsh-completions \
     zip unzip texlive-core pandoc pandoc-citeproc sqlite jdk8-openjdk \
     --noconfirm
+
+#Zsh setup
+sudo chsh -s /bin/zsh vagrant
 
 #Go setup
 mkdir $HOME/projects
@@ -18,7 +21,7 @@ export GOPATH=$HOME/projects/go
 export GOPATH=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-go get github.com/yaccio/orchid/orchid github.com/nsf/gocode github.com/rogpeppe/godef github.com/bradfitz/goimports
+go get github.com/yaccio/ys github.com/yaccio/orchid/orchid github.com/nsf/gocode github.com/rogpeppe/godef github.com/bradfitz/goimports
 
 #AUR Packages:
 sudo pacman -S --needed base-devel --noconfirm
