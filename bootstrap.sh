@@ -9,6 +9,7 @@ ln -s /vagrant/projects ~/projects
 #Software for development:
 sudo pacman -S cmake vim tmux zsh rust git cargo go docker zsh-completions \
     zip unzip texlive-core pandoc pandoc-citeproc sqlite jdk8-openjdk \
+    wget curl grep ruby mono nodejs npm python2 clang unrar \
     --noconfirm
 
 #Zsh setup
@@ -24,12 +25,13 @@ export PATH=$PATH:$GOBIN
 go get github.com/yaccio/ys github.com/yaccio/orchid/orchid github.com/nsf/gocode github.com/rogpeppe/godef github.com/bradfitz/goimports
 
 #AUR Packages:
-sudo pacman -S --needed base-devel --noconfirm
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
 tar -xvf aura-bin.tar.gz
 cd aura-bin 
 makepkg -sri --noconfirm
 sudo aura -A rust-src --noconfirm
+rm -rf ~/aura-bin
+rm ~/aura-bin.tar.gz
 
 #VIM Setup:
 cd ~/.vim/bundle
@@ -45,7 +47,13 @@ git clone https://github.com/derekwyatt/vim-scala.git
 git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive 
-sudo pacman -S mono nodejs npm --noconfirm
 gpg --keyserver keyserver.ubuntu.com --recv-keys 0FC3042E345AD05D
 python2 install.py --clang-completer --omnisharp-completer --gocode-completer \
         --tern-completer --racer-completer
+
+#Docker setup
+sudo gpasswd -a vagrant docker
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
+sudo systemctl start docker.service
+sudo systemctl start docker.socket
