@@ -8,7 +8,7 @@ ln -s /vagrant/projects ~/projects
 
 #Software for development:
 sudo pacman -S cmake vim tmux zsh rust git cargo go docker zsh-completions \
-    zip unzip texlive-core pandoc pandoc-citeproc sqlite jdk8-openjdk \
+    zip unzip texlive-core texlive-latexextra pandoc pandoc-citeproc sqlite jdk8-openjdk \
     wget curl grep ruby mono nodejs npm python2 clang unrar htop \
     graphviz \
     --noconfirm
