@@ -7,6 +7,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 9999, host: 9999
   config.vm.network "forwarded_port", guest: 8888, host: 8888
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.provider "virtualbox" do |v|
       v.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000 ]
       v.memory = 4000
