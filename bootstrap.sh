@@ -46,6 +46,7 @@ git clone https://github.com/vim-pandoc/vim-pandoc.git
 git clone https://github.com/vim-pandoc/vim-pandoc-syntax.git
 git clone https://github.com/derekwyatt/vim-scala.git
 git clone https://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/pbrisbin/vim-syntax-shakespeare.git
 cd YouCompleteMe
 git submodule update --init --recursive 
 gpg --keyserver keyserver.ubuntu.com --recv-keys 0FC3042E345AD05D
